@@ -12,11 +12,16 @@ const userSignUp = async (req: any, res: any) => {
     }
 
     // Create a new user
-    await User.create({ name, email, password, confirmPass });
+    const user = await User.create({ name, email, password, confirmPass });
+
+    const { _id } = user;
 
     res
       .status(201)
-      .json({ message: "User created successfully", user: { name, email } });
+      .json({
+        message: "User created successfully",
+        userDetails: { _id, name, email },
+      });
   } catch (error) {
     console.error("Signup error:", error);
     res.status(500).json({

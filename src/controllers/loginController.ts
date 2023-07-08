@@ -28,7 +28,9 @@ const userLogin = async (req: any, res: any) => {
     const id: any = user._id;
     await RefreshToken.create({ userId: id, token: refreshToken });
 
-    res.json({ accessToken, refreshToken });
+    const { _id, name } = user;
+
+    res.json({ userDetails: { _id, name, email }, accessToken, refreshToken });
   } catch (error) {
     console.error("Login error:", error);
     res.status(500).json({ message: "An error occurred during login" });

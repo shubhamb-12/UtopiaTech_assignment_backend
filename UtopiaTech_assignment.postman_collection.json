@@ -1,0 +1,124 @@
+{
+	"info": {
+		"_postman_id": "68b8a389-77f5-41ec-bf7f-432491f1c90f",
+		"name": "UtopiaTech_assignment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23773268"
+	},
+	"item": [
+		{
+			"name": "Signup",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Harvey\",\r\n    \"email\":\"harvey@gmail.com\",\r\n    \"password\":\"qwerty123\",\r\n    \"confirmPass\":\"qwerty123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/users/signup",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"harvey@gmail.com\",\r\n    \"password\":\"qwerty123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/users/login",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteUser",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YTkxMDU3NjFiOTM3MzMzZGUzOWZkZiIsImlhdCI6MTY4ODgwMTY0NywiZXhwIjoxNjg4ODAxNzY3fQ.1KVi9kNonQpUgWXUQSO-UwFaMsD1VUPzvOL_alcZQ44",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:3000/users/delete/64a9105761b937333de39fdf",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"delete",
+						"64a9105761b937333de39fdf"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "RefreshAccessToken",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"refreshToken\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YTkwZjY2NjFiOTM3MzMzZGUzOWZkNiIsImlhdCI6MTY4ODgwMTEzOH0.FEJJWCNOgcYnJY9TQODfGlKRpMlC8xY5dDFbVF0vEyM\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/token/refresh",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"token",
+						"refresh"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
